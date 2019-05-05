@@ -5,7 +5,6 @@ module.exports = (app) => {
     app.get('/user', (req, res) => {
         User.findAll()
             .then(user =>{
-
                 const data = {
                     success: true,
                     message: 'sucess',
