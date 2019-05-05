@@ -3,7 +3,11 @@ module.exports = (app) => {
     const response = require('../response');
 
     app.get('/user', (req, res) => {
-        User.findAll()
+        User.findAll({
+            attributes: {
+                exclude: ['password']
+            }
+        })
             .then(user =>{
                 const data = {
                     success: true,
